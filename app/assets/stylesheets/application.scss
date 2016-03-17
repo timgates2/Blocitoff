@@ -15,3 +15,30 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+body {
+  background: url("http://www.mrwallpaper.com/wallpapers/ihuru-island-maldives.jpg");
+  background-color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+div.transbox {
+  margin: 40px;
+  width: 360px;
+  height: 200px;
+  border: 1px dotted black;
+  color: #BCC6CC;
+}
+
+body {
+  font-style: normal;
+  font-size: inherit;
+  font-family: Gill Sans Extrabold, sans-serif;
+  font-weight: bold;
+  color: #BCC6CC;
+}

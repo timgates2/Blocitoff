@@ -7,15 +7,16 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-  <div class="container">
+  <div class="container"><center>
     <ul class="nav nav-tabs">
-      <li><%= link_to "Home", welcome_index_path %></li>
-      <li><%= link_to "About", welcome_about_path %></li>
+      <button class="header-btn"><%= link_to "Home", welcome_index_path, class: "header-btn" %></button>
+      <button class="header-btn"><%= link_to "About", welcome_about_path, class: "header-btn" %></button>
+      <button class="social-btn"><%= link_to "Contact", "https://github.com/timgates2", class: "social-btn" %></button>
     </ul>
+  </center>
   </div>
-
-
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -25,12 +26,16 @@
 
 <%= yield %>
 </body>
-</html>
 
-<% if user_signed_in? %>
-  Signed in as: <strong><%= current_user.email %></strong>
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-  <% else %>
-    <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %> -
-    <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %>
-<% end %>
+<footer>
+  <center>
+  <% if user_signed_in? %>
+    Signed in as: <strong><%= current_user.email %></strong>
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
+    <% else %>
+      <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %> -
+      <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %>
+  <% end %>
+</center>
+</footer>
+</html>
