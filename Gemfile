@@ -12,6 +12,12 @@ source 'https://rubygems.org'
  # #2
  group :development do
    gem 'sqlite3'
+   gem 'devise'
+   gem 'bootstrap-sass'
+ end
+
+ group :development, :test do
+   gem 'rspec-rails', '~> 3.0'
  end
 
  # Use SCSS for stylesheets
