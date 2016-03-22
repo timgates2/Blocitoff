@@ -7,13 +7,11 @@ source 'https://rubygems.org'
  group :production do
    gem 'pg'
    gem 'rails_12factor'
-   gem 'devise'
  end
 
  # #2
  group :development do
    gem 'sqlite3'
-   gem 'devise'
    gem 'bootstrap-sass'
  end
 
@@ -32,3 +30,4 @@ source 'https://rubygems.org'
  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
  gem 'turbolinks'
+ gem 'devise'
