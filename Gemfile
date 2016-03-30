@@ -12,7 +12,6 @@ source 'https://rubygems.org'
  # #2
  group :development do
    gem 'sqlite3'
-   gem 'bootstrap-sass'
  end
 
  group :development, :test do
@@ -31,3 +30,5 @@ source 'https://rubygems.org'
  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
  gem 'turbolinks'
  gem 'devise'
+ gem 'figaro', '1.0'
+ gem 'bootstrap-sass'
