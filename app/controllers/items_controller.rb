@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+    
     def create
         #load user
         #initalize item with stuff from params hash
@@ -12,14 +13,23 @@ class ItemsController < ApplicationController
         @item.user = current_user
         
         if @item.save
-            flash[:notice] = "item saved"
+            flash[:notice] = "Item saved successfully!"
         else
-            flash[:error] = "something went wrong"
+            flash[:error] = "Failed to save item."
         end
         redirect_to user_path(current_user)
     end
     
     def destroy
+        @item = Item.find(params[:id])
+        
+        if @item.destroy
+            flash[:notice] = "Item was deleted."
+            redirect_to user_path(current_user)
+        else
+            flash[:alert] = "Item could not be deleted. Please try again."
+            redirect_to user_path(current_user)
+        end
     end
     
     private
