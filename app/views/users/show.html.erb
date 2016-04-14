@@ -1,6 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-
-<%= render partial: 'items/form', locals: {user: current_user, item: Item.new } %>
-
-<%= render partial: 'items/item', collection: current_user.items %>
+<div class="col-md-8">
+    <h1><%= User.name %></h1>
+    <p>Find me in app/views/users/show.html.erb</p>
+    <div>
+    <h3>Items</h3>
+    <%= render partial: 'items/form', locals: {user: current_user, item: Item.new } %>
+    <%= render partial: 'items/item', collection: current_user.items %>
+    </div>
+    </div>
