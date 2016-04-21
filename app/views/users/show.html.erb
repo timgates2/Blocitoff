@@ -1,10 +1,9 @@
 <div class="col-md-8">
-    <h1><%= User.name %></h1>
-    <p>Find me in app/views/users/show.html.erb</p>
+    <h1><%= current_user.email %></h1>
     <div>
     <h3>Items</h3>
     <%= render partial: 'items/form', locals: {user: current_user, item: Item.new } %>
     <%= render partial: 'items/item', collection: current_user.items %>
     </div>
-    <div class='js-items-count'><%= pluralize(@user.items.count, 'items') %></div>
+    <div class='js-items-count'><%= pluralize(current_user.items.count, 'items') %></div>
     </div>
