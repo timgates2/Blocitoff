@@ -4,7 +4,7 @@
         <small>
         submitted <%= time_ago_in_words(item.created_at) %> ago.<br>
         <% if user_is_authorized_for_item?(item) %>
-         | <%= link_to "Delete", [@user, item], method: :delete %>
+         | <%= link_to "Delete", [@user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
        <% end %>
         </small>
 

@@ -6,4 +6,5 @@
     <%= render partial: 'items/form', locals: {user: current_user, item: Item.new } %>
     <%= render partial: 'items/item', collection: current_user.items %>
     </div>
+    <div class='js-items-count'><%= pluralize(@user.items.count, 'items') %></div>
     </div>
