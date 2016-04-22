@@ -7,6 +7,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
     
+    
     def destroy
      @user= User.find(params[:id])
      item= @user.item.find(params[:id])

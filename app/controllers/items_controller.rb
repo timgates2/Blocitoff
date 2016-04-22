@@ -4,12 +4,11 @@ class ItemsController < ApplicationController
         #load user
         #initalize item with stuff from params hash
         # try to save
-          #if success, load flash and redirect
-          #else, load flash redirect
+        #if success, load flash and redirect
+        #else, load flash redirect
           
         @user = current_user
-        
-        @item = Item.new(item_params)
+        @item = Item.new(params.require(:item).permit(:description, :time_left, :complete))
         @item.user = current_user
         
         if @item.save
@@ -36,10 +35,15 @@ class ItemsController < ApplicationController
         end
     end
     
+    
+    def edit
+        @item = Item.find(params[:id])
+    end
+    
+    
     private
     
     def item_params
         params.require(:item).permit(:description)
     end
 end
-
